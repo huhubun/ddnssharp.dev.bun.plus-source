@@ -1,0 +1,14 @@
+{
+    "vetur.format.defaultFormatterOptions": {
+        "prettier": {
+            // 使用单引号
+            "singleQuote": true,
+            // 不加分号
+            "semi": false,
+            // 禁止随时添加逗号
+            "trailingComma": "none",
+            // 当箭头函数仅有一个参数时加上括号
+            "arrowParens": "avoid"
+        }
+    }
+}
