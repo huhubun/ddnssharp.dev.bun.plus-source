@@ -1,7 +1,7 @@
 <template>
   <div>
     <index-jumbotron />
-    <index-os-area />
+    <index-download-area />
     <index-command-area />
     <index-provider-area />
     <index-open-source-area />

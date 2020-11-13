@@ -1,6 +1,6 @@
 <template>
   <v-container class="py-8">
-    <v-tabs background-color="transparent" color="basil" grow>
+    <v-tabs background-color="transparent" color="blue-grey darken-4" grow>
       <v-tab v-for="os in osList" :key="os.name">
         <v-icon class="pr-1">{{ os.icon }}</v-icon>
         {{ os.name }}
@@ -29,7 +29,7 @@
               <v-spacer></v-spacer>
 
               <v-card-actions class="align-end">
-                <v-btn outlined block>
+                <v-btn outlined block  color="blue-grey darken-4">
                   <v-icon left>mdi-download-box</v-icon>
                   Download
                 </v-btn>
