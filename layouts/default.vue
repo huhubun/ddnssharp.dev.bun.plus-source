@@ -25,7 +25,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" flat app>
+    <v-app-bar :clipped-left="clipped" flat app color="blue-grey darken-4 white--text">
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
         class="hidden-sm-and-up"
@@ -41,6 +41,7 @@
             v-bind:key="`toolbar_item_${i}_btn`"
             :to="items[i].to"
             :href="items[i].href"
+            class="white--text"
           >
             {{ items[i].title }}
           </v-btn>
@@ -52,7 +53,7 @@
       <nuxt />
     </v-main>
 
-    <v-footer color="primary" padless>
+    <v-footer color="blue-grey darken-4" padless>
       <v-row justify="center" no-gutters>
         <v-btn
           v-for="footer in footers"
@@ -64,7 +65,7 @@
         >
           {{ footer.text }}
         </v-btn>
-        <v-col class="primary pb-4 text-center white--text" cols="12">
+        <v-col class="pb-4 text-center white--text" cols="12">
           &copy; {{ new Date().getFullYear() }}
           <a
             href="https://huhubun.com"
