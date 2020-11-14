@@ -28,7 +28,7 @@
     <v-app-bar :clipped-left="clipped" flat app color="blue-grey darken-4 white--text">
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
-        class="hidden-sm-and-up"
+        class="hidden-sm-and-up white--text"
       />
       <v-toolbar-title v-text="title" />
 

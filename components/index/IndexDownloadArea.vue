@@ -29,7 +29,12 @@
               <v-spacer></v-spacer>
 
               <v-card-actions class="align-end">
-                <v-btn outlined block  color="blue-grey darken-4">
+                <v-btn
+                  outlined
+                  block
+                  color="blue-grey darken-4"
+                  :href="generateDownloadUrl(os, architecture)"
+                >
                   <v-icon left>mdi-download-box</v-icon>
                   Download
                 </v-btn>
@@ -45,9 +50,13 @@
 <script>
 export default {
   data: () => ({
+    // 版本不带 v 前缀
+    ddnssharpVersion: process.env.DDNSSHARP_VERSION,
+    // 完整 URL 类似于 https://github.com/huhubun/DDNSSharp/releases/download/v0.0.2/ddnssharp_0.0.2_linux.tar.gz
+    downloadBaseUrl: 'https://github.com/huhubun/DDNSSharp/releases/download/',
     osList: [
       {
-        name: 'Linux',
+        name: 'linux',
         icon: 'mdi-linux',
         architectures: [
           {
@@ -66,13 +75,14 @@ export default {
               '在 64 位 ARM 上运行的 Linux 发行版本，如 Raspberry Pi Model 3 及更高版本上的 Ubuntu 服务器 64 位'
           }
         ],
+        fileExtension: '.tar.gz',
         col: {
           lg: 4,
           md: 4
         }
       },
       {
-        name: 'Windows',
+        name: 'windows',
         icon: 'mdi-microsoft-windows',
         architectures: [
           {
@@ -93,13 +103,14 @@ export default {
               '适用于运行在 64 位 ARM 上的 Windows 10 及更高版本的 Windows 系统'
           }
         ],
+        fileExtension: '.zip',
         col: {
           lg: 3,
           md: 6
         }
       },
       {
-        name: 'macOS',
+        name: 'macos',
         icon: 'mdi-apple',
         architectures: [
           {
@@ -107,6 +118,7 @@ export default {
             text: '支持 macOS 10.12 Sierra 及更高版本'
           }
         ],
+        fileExtension: '.zip',
         col: {
           lg: 4,
           offset_lg: 4,
@@ -114,6 +126,11 @@ export default {
         }
       }
     ]
-  })
+  }),
+  methods: {
+    generateDownloadUrl(os, architecture) {
+      return `${this.downloadBaseUrl}v${this.ddnssharpVersion}/ddnssharp_${this.ddnssharpVersion}_${os.name}_${architecture.name}${os.fileExtension}`
+    }
+  }
 }
 </script>

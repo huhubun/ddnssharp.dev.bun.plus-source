@@ -4,7 +4,7 @@
       <v-col class="text-center" cols="12">
         <h1 class="display-3 mb-4 light-shadow">DDNSSharp</h1>
         <h4 class="subtitle-1 font-weight-light mb-10 light-shadow">
-          一款开源、易用的跨平台 DDNS 工具
+          开源、易用的跨平台 DDNS 工具
         </h4>
 
         <vue-typed-js
@@ -29,7 +29,7 @@ export default {
   data: () => ({
     typeds: [
       'list',
-      'add --type AAAA --interface eth0 --provider aliyun ipv6.bun.plus',
+      'add --type AAAA --interface eth0 --provider aliyun',
       'delete',
       'ip',
       'sync',
