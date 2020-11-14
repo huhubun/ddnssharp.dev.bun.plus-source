@@ -38,7 +38,7 @@ jobs:
       - name: Checkout ddnssharp.bun.dev site
         uses: actions/checkout@v2
         with:
-          repository: huhubun/ddnssharp.bun.dev-source
+          repository: huhubun/ddnssharp.bun.dev
           path: site
           token: ${{ secrets.DEPLOY_KEY }}
 
