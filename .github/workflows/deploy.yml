@@ -4,6 +4,7 @@ on: [push, workflow_dispatch]
 
 env:
   NODE_JS_VERSION: 12
+  GET_LATEST_RELEASE_URL: https://api.github.com/repos/huhubun/DDNSSharp/releases/latest
 
 jobs:
   main:
@@ -25,11 +26,31 @@ jobs:
         with:
           path: source
 
+      - name: Get the version of DDNSSharp
+        shell: pwsh
+        run: |
+          $response = Invoke-WebRequest -URI ${{ env.GET_LATEST_RELEASE_URL }} -Authentication OAuth -Token (ConvertTo-SecureString "${{ secrets.GITHUB_TOKEN }}" -AsPlainText -Force) | ConvertFrom-Json
+          $tag_name = $response.tag_name
+          $created_at = $response.created_at
+
+          if($tag_name.StartsWith("v"))
+          {
+            $version = $tag_name.Substring(1)
+          }
+          else
+          {
+            throw "Wrong tag_name, should start with 'v'."
+          }
+
+          echo "DDNSSHARP_VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          echo "DDNSSHARP_VERSION_CREATED_AT=$created_at" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
       - name: Generate
         run: |
           cd ./source
 
-          echo DDNSSHARP_VERSION=0.0.2 > .env
+          echo DDNSSHARP_VERSION=${{ env.DDNSSHARP_VERSION }} > .env
+          echo DDNSSHARP_VERSION_CREATED_AT=${{ env.DDNSSHARP_VERSION_CREATED_AT }} >> .env
 
           npm install
           npm run build

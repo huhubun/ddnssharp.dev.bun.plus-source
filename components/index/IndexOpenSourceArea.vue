@@ -48,7 +48,7 @@ export default {
       },
       {
         title: 'MIT 协议',
-        text: '您可以放心使用、复制和修改本程序',
+        text: '放心的使用、复制和修改本程序',
         btn: {
           href: 'https://github.com/huhubun/DDNSSharp',
           icon: 'mdi-license',

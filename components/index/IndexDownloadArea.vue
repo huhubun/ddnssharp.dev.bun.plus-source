@@ -1,5 +1,15 @@
 <template>
   <v-container class="py-8">
+    <div class="text-center mb-4">
+      <v-chip class="mx-2" color="blue-grey darken-1" outlined label>
+        当前版本 {{ ddnssharpVersion }}
+      </v-chip>
+
+      <v-chip class="mx-2" color="blue-grey darken-1" outlined label>
+        发布于 {{ ddnssharpVersionCreatedAt }} (UTC)
+      </v-chip>
+    </div>
+
     <v-tabs background-color="transparent" color="blue-grey darken-4" grow>
       <v-tab v-for="os in osList" :key="os.name">
         <v-icon class="pr-1">{{ os.icon }}</v-icon>
@@ -49,6 +59,16 @@
 
 <script>
 export default {
+  computed: {
+    ddnssharpVersionCreatedAt: function () {
+      var createdAtStr = process.env.DDNSSHARP_VERSION_CREATED_AT
+      var createdAtDate = new Date(createdAtStr)
+
+      return `${createdAtDate.getUTCFullYear()}-${
+        createdAtDate.getUTCMonth() + 1
+      }-${createdAtDate.getUTCDate()}`
+    }
+  },
   data: () => ({
     // 版本不带 v 前缀
     ddnssharpVersion: process.env.DDNSSHARP_VERSION,
