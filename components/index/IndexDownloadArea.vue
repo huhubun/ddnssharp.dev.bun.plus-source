@@ -1,11 +1,23 @@
 <template>
   <v-container class="py-8">
     <div class="text-center mb-4">
-      <v-chip class="mx-2" color="blue-grey darken-1" outlined label>
+      <v-chip
+        class="mx-2"
+        color="blue-grey darken-1"
+        outlined
+        label
+        :href="releasePageUrl"
+      >
         当前版本 {{ ddnssharpVersion }}
       </v-chip>
 
-      <v-chip class="mx-2" color="blue-grey darken-1" outlined label>
+      <v-chip
+        class="mx-2"
+        color="blue-grey darken-1"
+        outlined
+        label
+        :href="releasePageUrl"
+      >
         发布于 {{ ddnssharpVersionCreatedAt }} (UTC)
       </v-chip>
     </div>
@@ -67,6 +79,9 @@ export default {
       return `${createdAtDate.getUTCFullYear()}-${
         createdAtDate.getUTCMonth() + 1
       }-${createdAtDate.getUTCDate()}`
+    },
+    releasePageUrl: function () {
+      return `https://github.com/huhubun/DDNSSharp/releases/tag/v${this.ddnssharpVersion}`
     }
   },
   data: () => ({

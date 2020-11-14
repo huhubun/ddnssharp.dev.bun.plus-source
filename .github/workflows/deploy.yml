@@ -1,4 +1,4 @@
-name: Deploy huhubun.github.io
+name: Deploy ddnssharp.bun.dev
 
 on: [push, workflow_dispatch]
 
