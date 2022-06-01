@@ -3,7 +3,7 @@ name: Deploy ddnssharp.dev.bun.plus
 on: [push, workflow_dispatch]
 
 env:
-  NODE_JS_VERSION: 12
+  NODE_JS_VERSION: 16
   GET_LATEST_RELEASE_URL: https://api.github.com/repos/huhubun/DDNSSharp/releases/latest
 
 jobs:
