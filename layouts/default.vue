@@ -103,8 +103,8 @@ export default {
         },
         {
           icon: 'mdi-keyboard-return',
-          title: 'BUN.DEV',
-          href: 'https://bun.dev/'
+          title: 'DEV.BUN.PLUS',
+          href: 'https://dev.bun.plus/'
         }
       ],
       title: 'DDNSSharp',
@@ -114,8 +114,8 @@ export default {
           href: 'https://github.com/huhubun/DDNSSharp'
         },
         {
-          text: 'bun.dev 旗下作品',
-          href: 'https://bun.dev'
+          text: 'huhubun 旗下作品',
+          href: 'https://dev.bun.plus'
         }
       ]
     }
