@@ -8,7 +8,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - DDNSSharp — 开源、易用的跨平台 DDNS 工具 | bun.dev 旗下作品',
+    titleTemplate: '%s - DDNSSharp — 开源、易用的跨平台 DDNS 工具 | huhubun 旗下作品',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
