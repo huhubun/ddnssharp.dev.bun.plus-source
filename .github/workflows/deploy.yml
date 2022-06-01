@@ -1,4 +1,4 @@
-name: Deploy ddnssharp.bun.dev
+name: Deploy ddnssharp.dev.bun.plus
 
 on: [push, workflow_dispatch]
 
@@ -56,10 +56,10 @@ jobs:
           npm run build
           npm run generate
 
-      - name: Checkout ddnssharp.bun.dev site
+      - name: Checkout ddnssharp.dev.bun.plus site
         uses: actions/checkout@v2
         with:
-          repository: huhubun/ddnssharp.bun.dev
+          repository: huhubun/ddnssharp.dev.bun.plus
           path: site
           token: ${{ secrets.DEPLOY_KEY }}
 
