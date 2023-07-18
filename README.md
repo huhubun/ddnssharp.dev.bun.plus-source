@@ -1,6 +1,6 @@
-# ddnssharp.dev.bun.plus
+# ddnssharp.huhubun.com
 
-[DDNSSharp Website](https://ddnssharp.dev.bun.plus)  
+[DDNSSharp Website](https://ddnssharp.huhubun.com)  
 [DDNSSharp Source Code](https://github.com/huhubun/DDNSSharp)
 
 ## Build Setup
