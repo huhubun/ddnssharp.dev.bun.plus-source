@@ -103,19 +103,15 @@ export default {
         },
         {
           icon: 'mdi-keyboard-return',
-          title: 'DEV.BUN.PLUS',
-          href: 'https://dev.bun.plus/'
+          title: 'huhubun Studio',
+          href: 'https://huhubun.com/'
         }
       ],
       title: 'DDNSSharp',
       footers: [
         {
-          text: '源代码',
+          text: 'Github',
           href: 'https://github.com/huhubun/DDNSSharp'
-        },
-        {
-          text: 'huhubun 旗下作品',
-          href: 'https://dev.bun.plus'
         }
       ]
     }

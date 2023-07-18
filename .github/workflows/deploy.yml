@@ -1,9 +1,9 @@
-name: Deploy ddnssharp.dev.bun.plus
+name: Deploy ddnssharp.huhubun.com
 
 on: [push, workflow_dispatch]
 
 env:
-  NODE_JS_VERSION: 14
+  NODE_JS_VERSION: 18
   GET_LATEST_RELEASE_URL: https://api.github.com/repos/huhubun/DDNSSharp/releases/latest
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_JS_VERSION }}
 
@@ -22,7 +22,7 @@ jobs:
         run: npm -v
 
       - name: Checkout source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: source
 
@@ -56,10 +56,10 @@ jobs:
           npm run build
           npm run generate
 
-      - name: Checkout ddnssharp.dev.bun.plus site
-        uses: actions/checkout@v2
+      - name: Checkout ddnssharp.huhubun.com site
+        uses: actions/checkout@v3
         with:
-          repository: huhubun/ddnssharp.dev.bun.plus
+          repository: huhubun/ddnssharp.huhubun.com
           path: site
           token: ${{ secrets.DEPLOY_KEY }}
 
